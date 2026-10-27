@@ -1,0 +1,229 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #e8f0ff, #f7f8fc);
+    color: #202b43;
+}
+
+.chat-container {
+    width: 100%;
+    max-width: 650px;
+    height: min(760px, 90vh);
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid #e5eaf4;
+    border-radius: 20px;
+    box-shadow: 0 18px 55px rgba(42, 65, 110, 0.13);
+}
+
+.chat-header {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 20px;
+    color: white;
+    background: linear-gradient(135deg, #3268df, #6549cf);
+}
+
+.bot-avatar {
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.chat-header h1 {
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.chat-header p {
+    font-size: 12px;
+    color: #e3eaff;
+}
+
+.status-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-right: 5px;
+    border-radius: 50%;
+    background: #8df0bd;
+}
+
+.clear-button {
+    margin-left: auto;
+    padding: 9px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 9px;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+}
+
+.clear-button:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 24px 20px;
+    background: #fbfcff;
+}
+
+.message {
+    max-width: 85%;
+    padding: 13px 16px;
+    border-radius: 16px;
+    font-size: 14px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+}
+
+.message.bot {
+    align-self: flex-start;
+    color: #273550;
+    background: #edf1fa;
+    border-bottom-left-radius: 5px;
+}
+
+.message.user {
+    align-self: flex-end;
+    color: #ffffff;
+    background: #4168df;
+    border-bottom-right-radius: 5px;
+}
+
+.suggestions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 12px 18px;
+    border-top: 1px solid #edf0f6;
+}
+
+.suggestions p {
+    width: 100%;
+    color: #7c879b;
+    font-size: 12px;
+}
+
+.suggestion {
+    padding: 8px 11px;
+    border: 1px solid #dce4f5;
+    border-radius: 18px;
+    color: #3659b7;
+    background: white;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.suggestion:hover {
+    background: #edf2ff;
+}
+
+.chat-form {
+    display: flex;
+    gap: 10px;
+    padding: 14px 18px;
+    background: white;
+}
+
+.chat-form input {
+    flex: 1;
+    min-width: 0;
+    padding: 14px 15px;
+    border: 1px solid #dce3ef;
+    border-radius: 12px;
+    outline: none;
+    font-size: 14px;
+}
+
+.chat-form input:focus {
+    border-color: #4168df;
+    box-shadow: 0 0 0 3px rgba(65, 104, 223, 0.1);
+}
+
+.chat-form button {
+    padding: 0 20px;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    background: #4168df;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.chat-form button:hover {
+    background: #3054c5;
+}
+
+.chat-footer {
+    padding: 0 15px 14px;
+    text-align: center;
+    color: #98a1b2;
+    font-size: 11px;
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 8px;
+    }
+
+    .chat-container {
+        height: 94vh;
+        min-height: 450px;
+        border-radius: 15px;
+    }
+
+    .chat-header {
+        padding: 15px;
+    }
+
+    .chat-messages {
+        padding: 18px 12px;
+    }
+
+    .clear-button {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    .suggestions {
+        padding: 10px;
+    }
+
+    .chat-form {
+        padding: 10px;
+    }
+
+    .chat-form button {
+        padding: 0 14px;
+    }
+}
